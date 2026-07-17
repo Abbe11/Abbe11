@@ -1,16 +1,31 @@
-## Hi there 👋
+# Hi, I'm Abbe 👋
 
-<!--
-**Abbe11/Abbe11** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**Software Engineer** specializing in **security** and building toward **AI Engineering**.
 
-Here are some ideas to get you started:
+I build full-stack web applications and security tooling — and I'm now going deep on machine learning, learning to build AI systems *and* secure them.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+### 🔐 Security & tooling
+- **[sigma-detection-lab](https://github.com/Abbe11/sigma-detection-lab)** — writing and testing Sigma rules for threat detection.
+- **[secureops-cli](https://github.com/Abbe11/secureops-cli)** — a Python CLI for automating security-operations tasks.
+- **[nexusbank-pentest-lab](https://github.com/Abbe11/nexusbank-pentest-lab)** — penetration-testing lab against a mock banking app.
+
+### 💻 Software engineering
+- **[inventory-management-system](https://github.com/Abbe11/inventory-management-system)** — a full-CRUD Python inventory app.
+- **[portfolio-spa](https://github.com/Abbe11/portfolio-spa)** — my developer portfolio, built as a single-page app.
+
+### 🔭 Currently building
+- **[Market Lens](https://github.com/Abbe11/market-lens)** — market-data analysis growing into an ML price-prediction system.
+- Working toward my **CCNA** and going deep on **AI/ML engineering**.
+
+### 🛠️ Tech
+`Python` · `JavaScript` · `React` · `NumPy` · `pandas` · `SQL` · `Flask` · `Git`
+*Learning:* `scikit-learn` · `PyTorch` · networking & AI security
+
+### 📫 Reach me
+- Email: abbekibe2@gmail.com
+
+---
+
+*"Build it. Then learn to break it. Then build it better."*
