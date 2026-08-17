@@ -4,7 +4,7 @@
 Python · Application Security · AI Security · Detection Engineering · Automation
 📍 Kenya · open to remote
 
-I build practical systems across the security stack — secure backends and APIs, detection tooling, and hands-on labs that connect **classical application security** with **AI/LLM security**. My through-line: *a system must never confuse untrusted input with its own trusted instructions* — the flaw behind SQL injection, adversarial ML evasion, and prompt injection alike.
+I build practical systems across the security stack secure backends and APIs, detection tooling, and hands-on labs that connect **classical application security** with **AI/LLM security**. My through-line: *a system must never confuse untrusted input with its own trusted instructions* the flaw behind SQL injection, adversarial ML evasion, and prompt injection alike.
 
 Currently deepening ML/AI-security engineering and working toward my CCNA.
 
