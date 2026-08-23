@@ -39,11 +39,9 @@ OWASP Top 10 (2021) · NIST CSF 2.0 · NIST AI RMF · MITRE ATT&CK / ATLAS · Si
 ---
 
 ### 📫 Reach me
-- **Email:** abbekibe2@gmail.com
-- **LinkedIn:** _add your URL_
-- **Portfolio:** _add your URL, or remove this line_
+- **Email:** abbekibe2@gmail.co
 
-> *Open to Junior/Mid roles in Application Security, AI Security, Security Automation, Detection Engineering, and security-focused Python/backend engineering — remote-friendly.*
+> *Open to Junior/Mid roles in Application Security, AI Security, Security Automation, Detection Engineering, and security-focused Python/backend engineering remote-friendly.*
 
 ---
 *"Build it. Then learn to break it. Then build it better."*
