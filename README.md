@@ -1,6 +1,6 @@
 # Hi, I'm Abbe 👋
 
-**Applied Computer Scientist · Security-Focused Software Engineer**
+**Security-Focused Software Engineer**
 Python · Application Security · AI Security · Detection Engineering · Automation
 📍 Kenya · open to remote
 
