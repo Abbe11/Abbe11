@@ -30,7 +30,7 @@ Currently deepening ML/AI-security engineering and working toward my CCNA.
 **Languages:** `Python` · `JavaScript` · `PowerShell` · `SQL` · `HTML/CSS`
 **Backend & web:** `Flask` · `Flask-SQLAlchemy` · `Marshmallow` · `REST APIs` · `React`
 **Security:** `Sigma` · `MITRE ATT&CK` · `OWASP Top 10` · `detection engineering` · `threat modeling`
-**AI / data:** `NumPy` · `pandas` · `Jupyter` — *learning:* `scikit-learn` · `PyTorch` · LLM/prompt-injection security
+**AI / data:** `NumPy` · `pandas` · `Jupyter` *learning:* `scikit-learn` · `PyTorch` · LLM/prompt-injection security
 **Platforms & tooling:** `Linux (Ubuntu/Kali)` · `Docker` · `Git` · `pytest` · `VS Code`
 
 ### 📚 Frameworks & standards I've worked with
@@ -39,7 +39,7 @@ OWASP Top 10 (2021) · NIST CSF 2.0 · NIST AI RMF · MITRE ATT&CK / ATLAS · Si
 ---
 
 ### 📫 Reach me
-- **Email:** abbekibe2@gmail.co
+- **Email:** abbekibe2@gmail.com
 
 > *Open to Junior/Mid roles in Application Security, AI Security, Security Automation, Detection Engineering, and security-focused Python/backend engineering remote-friendly.*
 
