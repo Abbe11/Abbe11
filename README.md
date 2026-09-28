@@ -4,7 +4,7 @@ SOC and detection engineering · Python, PowerShell, Sigma · Nairobi, Kenya
 
 I write detections for attacker behaviour, test them against logs, and document where they break. Most of what I build sits between software engineering and security operations: small, tested tools that turn a log file into an answer a SOC analyst can act on.
 
-Previously a security systems intern at Briminets and an ICT support intern at the Youth Enterprise Development Fund.
+
 
 ## Start here
 
