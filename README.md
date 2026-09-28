@@ -9,10 +9,11 @@ Previously a security systems intern at Briminets and an ICT support intern at t
 ## Start here
 
 **[Detection-Lab](https://github.com/Abbe11/Detection-Lab)**
-Three detections, each with a PowerShell detector, a Sigma rule, a sample log and a Pester test that runs in GitHub Actions:
+Four detections, each with a PowerShell detector, a Sigma rule, a sample log and a Pester test that runs in GitHub Actions:
 - SSH brute force, including whether the attacker eventually got in (T1110)
 - A new account created with root privileges, a common backdoor (T1136)
 - Web attacks such as SQL injection and path traversal (T1190)
+- Impossible travel: the same account signing in from two countries too quickly to be the same person (T1078)
 
 **[sigma-detection-lab](https://github.com/Abbe11/sigma-detection-lab)**
 Four Sigma rules (LSASS credential dumping, security log cleared, svchost spawning cmd, whoami discovery) tested against real Windows EVTX attack recordings with a Python harness.
