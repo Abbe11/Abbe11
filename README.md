@@ -1,56 +1,52 @@
 # Abbe Kibe
 
-SOC and detection engineering · Python, PowerShell, Sigma · Nairobi, Kenya
+**SOC analyst and detection engineer.** I build detections for real attacks, test them until they break, and fix what the testing finds.
 
-I write detections for attacker behaviour, test them against logs, and document where they break. Most of what I build sits between software engineering and security operations: small, tested tools that turn a log file into an answer a SOC analyst can act on.
+Most of my work starts from something that actually happened that week, a new CVE or a campaign in the news, and ends with a detection, a test that proves it works, and an honest write-up of where it still falls short. I come from software engineering, so I treat detections like code: version controlled, tested on every push, and reviewed when they fail.
 
+## Selected work
 
+**[black-october-lab](https://github.com/Abbe11/black-october-lab)** · one attack, the full security lifecycle
 
-## Start here
+When the PHP2Shell bugs (CVE-2026-109618, CVE-2026-109619) hit in October 2026, I took them through every stage a security team would. I inventoried my own machine and found an Intel AMT management interface I didn't know was exposed. I ran the vulnerable PHP version in a locked-down Docker lab, applied the vendor's emergency mitigation and proved it worked against the patched release. Then I treated the lab as compromised: contained it without destroying evidence, investigated with file diffs, process lists and logs, and wrote a tabletop incident report and a blameless postmortem. Both action items from the postmortem were fixed and tested the same night.
 
-**[Detection-Lab](https://github.com/Abbe11/Detection-Lab)**
-Five detections, each with a PowerShell detector, a Sigma rule, a sample log and a Pester test that runs in GitHub Actions:
-- SSH brute force, including whether the attacker eventually got in (T1110)
-- A new account created with root privileges, a common backdoor (T1136)
-- Web attacks such as SQL injection and path traversal (T1190)
-- Impossible travel: the same account signing in from two countries too quickly to be the same person (T1078)
-- A reverse shell or crypto miner started after a break-in (T1059, T1496)
+**[Detection-Lab](https://github.com/Abbe11/Detection-Lab)** · six detections, tested on every push
 
-**[sigma-detection-lab](https://github.com/Abbe11/sigma-detection-lab)**
-Four Sigma rules (LSASS credential dumping, security log cleared, svchost spawning cmd, whoami discovery) tested against real Windows EVTX attack recordings with a Python harness.
+Each detection has a PowerShell detector, sample data and Pester tests running in GitHub Actions, and most have a Sigma rule.
 
-**[offensive-lab](https://github.com/Abbe11/offensive-lab)**
-HackTheBox write-ups: recon, foothold, why it worked and how a defender would stop it, for every box.
+| Detection | MITRE ATT&CK | What makes it interesting |
+|---|---|---|
+| SSH brute force | T1110 | Escalates to critical if the attacking IP later logs in successfully |
+| New root account | T1136 | Single-event alert: one UID 0 backdoor is already a full compromise |
+| Web attacks | T1190 | Tested against OWASP Juice Shop, which exposed two gaps sample logs had hidden |
+| Impossible travel | T1078 | Includes a test proving a legitimate long-haul trip is not flagged |
+| Post-exploitation | T1059, T1105, T1496 | Caught PHP2Shell activity without being written for it; testing found a missed curl download, now fixed |
+| Stolen cloud app keys | T1078.004 | Based on the November 2026 ARTEX campaign. Written in PowerShell and KQL, with the KQL validated in Azure Data Explorer |
 
-**[nexusbank-pentest-lab](https://github.com/Abbe11/nexusbank-pentest-lab)**
-A deliberately vulnerable Flask banking app that I attacked from Kali (Nmap, Nikto, SQLMap, Hydra, Metasploit), plus a small detection engine that records what those attacks look like from the defender's side.
+The stolen-key detection taught me the most. My first version learned "normal" from the same log it was checking, so when the attacker's sign-in came first, the attacker became normal. Fixing that poisoned baseline, and writing a test so it can't come back, is in the README.
 
-## Backend work
+**[leaked-key-lab](https://github.com/Abbe11/leaked-key-lab)** · stopping the leak before it happens
 
-- **[inventory-management-system](https://github.com/Abbe11/inventory-management-system)**: Flask REST API and CLI with OpenFoodFacts enrichment and a mocked pytest suite
-- **[workout-tracker-api](https://github.com/Abbe11/workout-tracker-api)**: Flask API with session auth, bcrypt password hashing and per-user data ownership
-- **[secureops-cli](https://github.com/Abbe11/secureops-cli)**: OOP command-line tracker with JSON persistence and pytest
+A secret scanner plus a git pre-commit hook that refuses any commit containing an API key or private key. Tuned to cut the false positives a naive search produces (a plain `sk-` search flags words like "risk-"), and checked with planted canary keys so an empty result can be trusted.
 
-## Security tools
+**[sigma-detection-lab](https://github.com/Abbe11/sigma-detection-lab)** · four Sigma rules (LSASS credential dumping, security log cleared, svchost spawning cmd, whoami discovery) tested against real Windows EVTX attack recordings with a Python harness.
 
-- **[netprobe](https://github.com/Abbe11/netprobe)**: explains IP subnets and MAC addresses in plain English, with a connection doctor. Pure standard library, 14 tests
-- **[sitecheck](https://github.com/Abbe11/sitecheck)**: non-invasive website security header checker that grades a site and writes a fix-it report
-- **[scam-spotter-agent](https://github.com/Abbe11/scam-spotter-agent)**: small LLM agent that flags scam SMS using a tool-calling loop
+**[offensive-lab](https://github.com/Abbe11/offensive-lab)** and **[nexusbank-pentest-lab](https://github.com/Abbe11/nexusbank-pentest-lab)** · the attacker's side. HackTheBox write-ups, and a deliberately vulnerable Flask banking app attacked from Kali, each paired with how a defender would detect or stop it.
 
-## In progress
+## Engineering
 
-**[sentinel](https://github.com/Abbe11/sentinel)**: an early-stage Java / Spring Boot service for FHIR R4 health insurance claims, aimed at the platforms used in Saudi Arabia (NPHIES) and the EU (EHDS). It validates claims against FHIR R4, runs NPHIES-style denial rules (missing preauthorization, totals that do not add up) and writes a PHI-safe audit log. More rules and an RBAC and encryption layer are next.
+- **[sentinel](https://github.com/Abbe11/sentinel)**: Java / Spring Boot service for FHIR R4 health insurance claims, aimed at Saudi Arabia's NPHIES platform. Validates claims, applies denial rules and keeps a PHI-safe audit log. In progress.
+- **[inventory-management-system](https://github.com/Abbe11/inventory-management-system)**: Flask REST API and CLI with a mocked pytest suite
+- **[workout-tracker-api](https://github.com/Abbe11/workout-tracker-api)**: Flask API with session auth, bcrypt hashing and per-user data ownership
+- **[secureops-cli](https://github.com/Abbe11/secureops-cli)**, **[netprobe](https://github.com/Abbe11/netprobe)**, **[sitecheck](https://github.com/Abbe11/sitecheck)**, **[scam-spotter-agent](https://github.com/Abbe11/scam-spotter-agent)**: smaller tools for team tracking, network diagnostics, security header grading and scam SMS detection
 
-## Tools I have actually used
+## Toolkit
 
-- **Languages:** Python, PowerShell, SQL, JavaScript
-- **Detection:** Sigma, MITRE ATT&CK, Pester, pytest, GitHub Actions
-- **Offensive, lab only:** Nmap, Nikto, SQLMap, Hydra, Metasploit, Kali Linux
-- **Backend:** Flask, SQLAlchemy, Marshmallow, React
-- **Currently studying:** TryHackMe SOC Level 1
+**Detection and response:** Sigma, KQL, MITRE ATT&CK, incident response (PICERL), log and process analysis
+**Testing and automation:** Pester, pytest, GitHub Actions, git hooks
+**Languages:** PowerShell, Python, SQL, Java, JavaScript
+**Lab:** Docker, Kali Linux, Nmap, Nikto, SQLMap, Hydra, Metasploit (lab use only)
 
 ## Contact
 
-abbekibe2@gmail.com
-
-Looking for SOC analyst, junior detection engineering and Python backend roles. Open to remote work, Kenya, and relocation to the UAE or Europe.
+abbekibe2@gmail.com · open to SOC analyst, junior detection engineering and security-focused backend roles, remote or on-site.
