@@ -42,10 +42,10 @@ A secret scanner plus a git pre-commit hook that refuses any commit containing a
 
 ## Toolkit
 
-**Detection and response:** Sigma, KQL, MITRE ATT&CK, incident response (PICERL), log and process analysis
-**Testing and automation:** Pester, pytest, GitHub Actions, git hooks
-**Languages:** PowerShell, Python, SQL, Java, JavaScript
-**Lab:** Docker, Kali Linux, Nmap, Nikto, SQLMap, Hydra, Metasploit (lab use only)
+- **Detection and response:** Sigma, KQL, MITRE ATT&CK, incident response (PICERL), log and process analysis
+- **Testing and automation:** Pester, pytest, GitHub Actions, git hooks
+- **Languages:** PowerShell, Python, SQL, Java, JavaScript
+- **Lab:** Docker, Kali Linux, Nmap, Nikto, SQLMap, Hydra, Metasploit (lab use only)
 
 ## Contact
 
