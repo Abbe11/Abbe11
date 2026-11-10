@@ -8,7 +8,7 @@ Most of my work starts from something that actually happened that week, a new CV
 
 **[black-october-lab](https://github.com/Abbe11/black-october-lab)** · one attack, the full security lifecycle
 
-When the PHP2Shell bugs (CVE-2026-109618, CVE-2026-109619) hit in October 2026, I took them through every stage a security team would. I inventoried my own machine and found an Intel AMT management interface I didn't know was exposed. I ran the vulnerable PHP version in a locked-down Docker lab, applied the vendor's emergency mitigation and proved it worked against the patched release. Then I treated the lab as compromised: contained it without destroying evidence, investigated with file diffs, process lists and logs, and wrote a tabletop incident report and a blameless postmortem. Both action items from the postmortem were fixed and tested the same night.
+When the PHP2Shell bugs (CVE-2026-109618, CVE-2026-109619) hit in October 2026, I took them through every stage a security team would. I inventoried my own machine and found an Intel AMT management interface listening that I didn't know existed. I ran the vulnerable PHP version in a locked-down Docker lab, applied the vendor's emergency mitigation and proved it worked against the patched release. Then I treated the lab as compromised: contained it without destroying evidence, investigated with file diffs, process lists and logs, and wrote a tabletop incident report and a blameless postmortem. The fixes it called for are shipped and covered by tests.
 
 **[Detection-Lab](https://github.com/Abbe11/Detection-Lab)** · six detections, tested on every push
 
